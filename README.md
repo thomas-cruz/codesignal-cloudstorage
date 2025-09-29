@@ -17,7 +17,7 @@ Note that all queries calling the addFile operation implemented during Level 1 a
     updateCapacity(userId, capacity) — should change the maximum storage capacity for the user with userId. If the total size of all user's files exceeds the new capacity, the largest files (sorted lexicographically in case of a tie) should be removed from the storage until the total size of all remaining files will no longer exceed the new capacity. Returns the number of removed files, or null if a user with userId does not exist.  
 
 # Level 4  
-Implement in support for file compression.
+Implement support for file compression.
 
     compressFile(userId, name) — should compress the file name if it belongs to userId. The compressed file should be replaced with a new file named <name>.COMPRESSED. The size of the newly created file should be equal to the half of the original file. The size of all files is guaranteed to be even, so there should be no fractional calculations. It is also guaranteed that name for this operation never points to a compressed file - i.e., it never ends with .COMPRESSED. Compressed files should be owned by userId — the owner of the original file. Returns the remaining storage capacity for userId if the file was compressed successfully or null otherwise.
 
